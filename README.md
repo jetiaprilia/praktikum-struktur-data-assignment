@@ -1,3 +1,22 @@
+Nama: Jeti Aprilia
+Kelas: S1SD04-B
+NIM: 2311110059
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Class adalah struktur data yang dapat menyimpan data (variabel) dan fungsi (metode) bersama-sama.
 Anda dapat menggunakan akses kontrol (public, private, protected) untuk menentukan bagaimana data dan fungsi tersebut dapat diakses oleh bagian lain dari program.
 Class bisa memiliki konstruktor dan destruktor.
