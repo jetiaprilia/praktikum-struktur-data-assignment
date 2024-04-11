@@ -1,0 +1,29 @@
+Berikut interpretasi dari setiap soal/unguided:
+
+Interpretasi unguided 1:
+
+1. Fungsi bernama "Swap" sesuai namanya berfungsi untuk menukar nilai antara 2 variabel
+2. Fungsi "Selection Sort" berfungsi untuk mengurutkan array secara descending dengan metode selection sort. Tak hanya itu, fungsi ini juga menerima array IPS dan panjangnya=n sebagai argumen
+3. Untuk "main()", berfungsi untuk mendefinisikan array dan menghitung panjangnya
+4. Lalu mencetak array mahasiswa sebelum diurutkan
+5. Memanggil fungsi "Selection Sort" untuk mengurutkan IPS mahasiswa
+6. Mencetak IPS mahasiswa dengan menggunakan metode Selection Sort secara descending (terbesar ke terkecil)
+
+Interpretasi unguided 2:
+
+1. Fungsi "Swap" berfungsi untuk menukar dua karakter
+2. Fungsi "Bubble Sort" berfungsi untuk mengurutkan array sesuai abjad menggunakan metode Bubble Sort. Lalu fungsi ini juga menerima array string dan panjangnya=n.
+3. Untuk "main()", berfungsi untuk mengartikan array warga dan menghitung panjangnya
+4. Lalu mencetak nama-nama warga sebelum diurutkan untuk membandingkan sebelum dan setelah
+5. Memanggil fungsi "Bubble Sort" untuk memproses program
+6. Mencetak nama-nama warga setelah diurutkan
+
+Interpretasi unguided 3:
+
+1. Program di atas meminta user untuk memasukkan jumlah karakter (n), dan pada soal diminta n=5
+2. Array "characters" dibuat dengan ukuran sesuai dengan n yang diminta yaitu 5
+3. User diminat memasukkan n karakter
+4. Karakter-karakter tersebut lalu diurutkan sesuai abjad (naik) menggunakan fungsi "sort" 
+5. Ditampilkan hasil setelah karakter diurutkan secara naik
+6. Lalu karakter diurutkan juga secara turun yaitu dengan menambahkan argumen `greater<char()` ke fungsi `sort`
+7. Ditampilkan hasil pengurutan secara turun
