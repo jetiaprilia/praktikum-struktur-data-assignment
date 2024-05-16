@@ -287,6 +287,7 @@ int main() {
 ```
 
 #### Output:
+https://github.com/jetiaprilia/praktikum-struktur-data-assignment/blob/main/MODUL-7-STACK_dan_QUEUE/output/Unguided1.exe
 
 ### Penjelasan
 Pertama program meminta inputan dari user dengan bentuk memasukkan kalimat. Lalu kalimat tersebut difilter dengan menghapus alphanumeric, lalu diubah menjadi huruf kecil.
@@ -373,6 +374,7 @@ int main() {
 ```
 
 #### Output:
+https://github.com/jetiaprilia/praktikum-struktur-data-assignment/blob/main/MODUL-7-STACK_dan_QUEUE/output/Unguided2.exe
 
 ### Penjelasan
 Setelah running program berjalan pada output akan menampilkan 3 opsi yaitu input kalimat, cek palindrom, dan keluar. Selanjutnya pada input kalimat setelah memasukkan kalimat yang akan di cek palindrom atau bukan, kalimat akan tersimpan dalam variabel `sentence`.
