@@ -266,6 +266,7 @@ int main() {
 
 #### Output:
 
+
 ## Kesimpulan
 Priority queue adalah suatu bentuk struktur data yang berbasiskn struktur queue dan pengimplementasiannya adalah dengan heaps. Struktur priority queue dengan heaps berbentuk seperti pohon dengan max atau min angka yang diinginkan.
 
