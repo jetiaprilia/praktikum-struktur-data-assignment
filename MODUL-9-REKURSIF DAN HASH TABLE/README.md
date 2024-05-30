@@ -210,6 +210,7 @@ int main() {
 }
 ```
 #### Output:
+https://github.com/jetiaprilia/praktikum-struktur-data-assignment/blob/main/MODUL-9-REKURSIF%20DAN%20HASH%20TABLE/output/Unguided%201.exe
 
 ### Penjelasan:
 Fungsi `factorial` digunakan untuk menghitung faktorial bilangan n, dengan basis rekusri n <= 1 untuk mengembalikan 1, jika tidak fungsi mengkalikan n dengan hasil n-1
@@ -256,6 +257,7 @@ int main() {
 }
 ```
 #### Output:
+https://github.com/jetiaprilia/praktikum-struktur-data-assignment/blob/main/MODUL-9-REKURSIF%20DAN%20HASH%20TABLE/output/Unguided%202.exe
 
 ### Penjelasan:
 Pertama program yang akan mendeklarasikan fungsi yaitu `factorial_helper` dan `factorial`.
@@ -423,6 +425,7 @@ int main() {
 }
 ```
 #### Output:
+https://github.com/jetiaprilia/praktikum-struktur-data-assignment/blob/main/MODUL-9-REKURSIF%20DAN%20HASH%20TABLE/output/Unguided%203.exe
 
 ### Penjelasan:
 Dalam hash memiliki penjelasan yang cukup kompleks. Dalam fungsi `Student` untuk menyimpan data berupa NIM dan nilai, `hashFunc`= menghitung nilai hash untuk sebuah NIM, `insert` dan `remove` untuk menambah dan menghapus data, lalu untuk mencari nilai mahasiswa berdasarkan NIM dengan `searchByNIM`, kemudian untuk mencari dan menampilkan data dalam range nilai tertentu= `searchByRange`
