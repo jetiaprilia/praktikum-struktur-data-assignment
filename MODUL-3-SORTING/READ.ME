@@ -1,0 +1,303 @@
+# <h1 align="center">Laporan Praktikum Modul Sorting</h1>
+<p align="center">Jeti Aprilia</p>
+<p align="center">2311110059</p>
+
+## Dasar Teori
+Pengurutan data atau Sorting merupakan suatu proses penyusunan kembali beberapa kumpulan data yang sebelumnya telah tersusun secara acak hingga tersusun secara teratur menurut aturan tertentu.
+Data umumnya berbentuk karakter atau numerik. Algoritma sorting merupakan topik yang penting dalam ilmu komputer dan memiliki berbagai macam algoritma yang berbeda dengan kecepatan dan kompleksitas yang beragam.
+Namun, pada proses pengurutan data acak bilangan integer yang berjumlah besar terutama data bilangan integer dengan banyak data acak lebih dari 1.000 bilangan dapat menjadi lebih lambat terutama untuk algoritma sorting dengan kompleksitas O(n2).
+Oleh karena itu, diperlukan algoritma sorting yang efisien dan lebih cepat untuk mengurutkan data bilangan acak integer menjadi urutan data bilangan interger yang benar dalam jumlah yang besar. Beberapa algoritma sorting seperti Selection Sort, Bubble Sort, dan Insertion Sort mempunyai kompleksitas yang relatif besar yaitu O(n2).
+
+### 1. BUBLE SORTING
+Bubble Sort merupakan algoritma pengurutan data yang mana metodenya adalah dengan cara membandingkan elemen sekarang dengan elemen berikutnya, apabila elemen sekarang lebih besar/kecil dari elemen berikutnya maka akan dilakukan penukaran posisi(index), jika tidak maka tidak perlu menukar posisi(index) datanya.
+Untuk contoh kasus, n merupakan jumlah data didalam array, jika n = 10 maka akan dilakukan (n - 1) = 9 iterasi penukaran posisi(index) data(Mulai dari 0 hingga n – 2).
+
+### 2. SELECTION SORTING
+Sementara itu Selection Sort adalah salah satu algoritma pengurutan yang bekerja dengan cara memilih elemen terkecil dari kumpulan data dan memindahkannya ke posisi yang sesuai
+Selection sort lebih efektif untuk mengurutkan data yang sudah hampir terurut karena Selection Sort memiliki komplektisitas O(n2).
+
+### 3. INSERTION SORTING
+Algoritma insertion sort adalah sebuah algoritma sederhana yang cukup efisien untuk mengurutkan sebuah list yang hampir terurut.
+Pada array, list yang baru dan elemen sisanya dapat berbagi tempat di array, meskipun cukup rumit.
+Algoritma Insertion Sort juga terdiri dari 2 kalang bersarang. Dimana terjadi N-1 Pass (dengan N adalah banyak elemen struktur data), dengan masing-masing Pass terjadi i kali operasi perbandingan. i tersebut bernilai 1 untuk Pass pertama, bernilai 2 untuk Pass kedua, begitu seterusnya hingga Pass ke N-1 (O(N^2).
+
+## Guided
+
+### 1. Mengurutkan secara ascending untuk data numerik bertipe double menggunakan Algoritma Bubble Sort
+
+```C++
+#include <iostream>
+using namespace std;
+
+// Fungsi untuk mengurutkan array menggunakan algoritma buble sort
+void bubble_sort(double arr[], int length) {
+    bool not_sorted = true;
+    int j = 0;
+    double tmp;
+
+    // Melakukan pengurutan hingga array sudah
+    while (not_sorted) {
+        not_sorted = false;
+        j++;
+
+        // Membandingkan dan menukar elemen
+        for (int i = 0; i < length - j; i++) {
+            if (arr[i] > arr[i + 1]) {
+                // Menukar elemen
+                tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+
+                // Set not_sorted ke true karena
+                not_sorted = true;
+            }
+        }
+    }
+}
+
+// Fungsi untuk mencetak isi array
+void print_array(double a[], int length) {
+    for(int i = 0; i < length; i++) {
+        cout << a[i] << "\t";
+    }
+    cout << endl;
+}
+
+int main() {
+    int length = 6; // Jumlah elemen dalam
+    double a[] = {22.1, 15.3, 8.2, 33.21, 99.99, 99.99};
+
+    cout << "Urutan bilangan sebelum sorting: " << endl;
+    print_array(a, length);
+
+    bubble_sort(a, length);
+
+    cout << "\nUrutan bilangan setelah sorting: " << endl;
+    print_array(a, length);
+}
+```
+### 2. Mengurutkan karakter secara descending (dari terbesar hingga terkecil) menggunakan Algoritma Insertion Sort
+
+```C++
+#include <iostream>
+using namespace std;
+
+// Fungsi untuk mengurutkan array secara descending menggunakan algoritma insertion sort
+void insertion_sort(char arr[], int length) {
+    int i, j;
+    char tmp;
+
+    for (i = 1; i < length; i++) {
+        j = i;
+
+        while (j > 0 && arr[j - i] < arr[j]) {
+            tmp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = tmp;
+            j--;
+        }//end of while loop
+    }//end of for loop
+}
+
+void print_array(char a[], int length) {
+
+    for(int i=0; i<length; i++) {
+        cout << a[i] << "\t";
+    }
+    cout << endl;
+}
+
+int main() {
+
+    int length = 6;
+    char a[length] = {'c', 'f', 'a', 'z', 'd', 'p'};
+
+    cout << "Urutan karakter sebelum sorting: " << endl;
+    print_array(a, length);
+
+    insertion_sort(a, length);
+
+    cout << "\nUrutan karakter setelah sorting: " << endl;
+    print_array(a, length);
+}
+```
+## Unguided 
+
+### 1. Kelas S1 IF 2016 G memiliki 5 mahasiswa. Pada akhir semester mereka menerima lembar Indeks Prestasi Semester (IPS), masing-masing mahasiswa tersebut memiliki IPS sebagai berikut: {3.8, 2.9, 3.3, 4.0, 2.4}. Buatlah program untuk mengurutkan IPS mahasiswa tersebut dari yang terbesar hingga terkecil dengan menggunakan algoritma Selection Sort! (Score: 30).
+                                                                                                                                                                                                                                                                                                                  
+```C++
+#include <iostream>
+
+using namespace std;
+
+// Fungsi untuk menukar nilai antara dua variabel
+void swap(double *xp, double *yp) {
+    double temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+// Fungsi untuk mengurutkan array descending menggunakan algoritma Selection Sort
+void selectionSort(double arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        int max_index = i;
+        for (int j = i+1; j < n; j++) {
+            if (arr[j] > arr[max_index]) {
+                max_index = j;
+            }
+        }
+        // Tukar nilai
+        swap(&arr[max_index], &arr[i]);
+    }
+}
+
+int main() {
+    double ips_mahasiswa[] = {3.8, 2.9, 3.3, 4.0, 2.4};
+    int n = sizeof(ips_mahasiswa) / sizeof(ips_mahasiswa[0]);
+
+    cout << "IPS mahasiswa sebelum diurutkan:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << ips_mahasiswa[i] << " ";
+    }
+    cout << endl;
+
+    // Panggil fungsi selectionSort untuk mengurutkan IPS
+    selectionSort(ips_mahasiswa, n);
+
+    cout << "\nIPS mahasiswa setelah diurutkan secara descending:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << ips_mahasiswa[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+#### Output:
+
+ ### Penjelasan:                                                                                                                                                                                                                                                                                                                 
+1. Fungsi bernama "Swap" sesuai namanya berfungsi untuk menukar nilai antara 2 variabel
+2. Fungsi "Selection Sort" berfungsi untuk mengurutkan array secara descending dengan metode selection sort. Tak hanya itu, fungsi ini juga menerima array IPS dan panjangnya=n sebagai argumen
+3. Untuk "main()", berfungsi untuk mendefinisikan array dan menghitung panjangnya
+4. Lalu mencetak array mahasiswa sebelum diurutkan
+5. Memanggil fungsi "Selection Sort" untuk mengurutkan IPS mahasiswa
+6. Mencetak IPS mahasiswa dengan menggunakan metode Selection Sort secara descending (terbesar ke terkecil)
+
+### 2. Pak RT memiliki 10 warga dengan nama: siti, situ, sana, ana, ani, caca, cici, dida, dodo, dan dadi. Supaya mudah dalam melakukan pencarian, Pak RT akan mengurutkan namanama tersebut sesuai dengan alfabet. Buatlah program untuk membantu Pak RT dengan menggunakan algoritma Bubble Sort! (Score: 30).
+                                                                                                                                                                                                                                                                                                         
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Fungsi untuk menukar dua string
+void swap(string &a, string &b) {
+    string temp = a;
+    a = b;
+    b = temp;
+}
+
+// Fungsi untuk mengurutkan array string sesuai abjad menggunakan algoritma Bubble Sort
+void bubbleSort(string arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
+}
+
+int main() {
+    string warga[] = {"siti", "situ", "sana", "ana", "ani", "caca", "cici", "dida", "dodo", "dadi"};
+    int n = sizeof(warga) / sizeof(warga[0]);
+
+    cout << "Nama-nama warga sebelum diurutkan:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << warga[i] << " ";
+    }
+    cout << endl;
+
+    // Panggil fungsi bubbleSort untuk mengurutkan nama warga
+    bubbleSort(warga, n);
+
+    cout << "\nNama-nama warga setelah diurutkan sesuai abjad:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << warga[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+#### Output:
+                                                                                                                                                                                                                                                                                                                  
+### Penjelasan
+1. Fungsi "Swap" berfungsi untuk menukar dua karakter
+2. Fungsi "Bubble Sort" berfungsi untuk mengurutkan array sesuai abjad menggunakan metode Bubble Sort. Lalu fungsi ini juga menerima array string dan panjangnya=n.
+3. Untuk "main()", berfungsi untuk mengartikan array warga dan menghitung panjangnya
+4. Lalu mencetak nama-nama warga sebelum diurutkan untuk membandingkan sebelum dan setelah
+5. Memanggil fungsi "Bubble Sort" untuk memproses program
+6. Mencetak nama-nama warga setelah diurutkan
+
+### 3. Buatlah program yang meminta user menginputkan suatu bilangan n dan meminta user untuk menginputkan sejumlah n karakter. Kemudian program akan melakukan sorting secara menaik (ascending) dan menurun (descending)! (Score: 40).
+```C++
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Masukkan jumlah karakter (n): ";
+    cin >> n;
+
+    char characters[n];
+
+    // Meminta pengguna untuk memasukkan karakter
+    cout << "Masukkan " << n << " karakter: ";
+    for (int i = 0; i < n; i++) {
+        cin >> characters[i];
+    }
+
+    // Pengurutan karakter secara naik
+    sort(characters, characters + n);
+
+    // Menampilkan hasil pengurutan naik
+    cout << "\nPengurutan karakter secara naik:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << characters[i] << " ";
+    }
+    cout << endl;
+
+    // Pengurutan karakter secara turun
+    sort(characters, characters + n, greater<char>());
+
+    // Menampilkan hasil pengurutan turun
+    cout << "\nPengurutan karakter secara turun:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << characters[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+#### Output:
+
+### Penjelasan                                                                                                                                                                                                                                                                                                                  
+1. Program di atas meminta user untuk memasukkan jumlah karakter (n), dan pada soal diminta n=5
+2. Array "characters" dibuat dengan ukuran sesuai dengan n yang diminta yaitu 5
+3. User diminat memasukkan n karakter
+4. Karakter-karakter tersebut lalu diurutkan sesuai abjad (naik) menggunakan fungsi "sort" 
+5. Ditampilkan hasil setelah karakter diurutkan secara naik
+6. Lalu karakter diurutkan juga secara turun yaitu dengan menambahkan argumen greater<char() ke fungsi sort
+7. Ditampilkan hasil pengurutan secara turun
+## Kesimpulan
+Algoritma sorting adalah algoritma yang cocok untuk menyelesaikan masalah yang sesuai juga. Dengan kelebihan dan kekurangan algoritma tersebut.
+## Referensi
+[1] Risqi Pradana Aryanto , Agung Nilogiri , Ari Eko Wardoyo, "Optimasi Pengurutan Data Bilangan dengan Menggabungkan Algoritma Selection Sort Hybrid dan Bucket Sort", 2023.
+[2] Dendi Rizka Poetra, Nur Hayati, "Performa Algoritma Bubble Sort Dan Quick Sort Pada Framework Flutter Dan Dart SDK (Studi Kasus Aplikasi E-Commerce)", 2022.
+[3] Setia Negara B. Tjaru, "Kompleksitas Algoritma Pengurutan Selection Sort dan Insertion Sort", 2009.
+                                                                                                                                                                                                                                                                                                               
